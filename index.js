@@ -14,7 +14,6 @@ client.on('guildMemberAdd', (member) => {
     const server_id = "1166723957773312111"; 
     const server = client.guilds.cache.get(server_id);
   
-    // Sunucuyu bulamazsak hata mesajı gönderelim
     if (server) 
     {
     const welcomeMessage1 = `${member.user} Welcome 🎉`;
