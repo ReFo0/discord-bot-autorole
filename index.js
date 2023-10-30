@@ -17,32 +17,32 @@ client.on('guildMemberAdd', (member) => {
     // Sunucuyu bulamazsak hata mesajı gönderelim
     if (server) 
     {
-    const welcomeMessage1 = `Merhaba  ${member.user} Hoş geldin 🎉`;
+    const welcomeMessage1 = `${member.user} Welcome 🎉`;
   
     member.send(welcomeMessage1);
-    const botRole = member.guild.roles.cache.find(role => role.name === "bot");
-    const memberRole = member.guild.roles.cache.find(role => role.name === "member");
-    const welcomeMessage = `Hoş geldin ${member.user}! Sunucumuza katıldığın için teşekkür ederiz.`;
+    const botRole = member.guild.roles.cache.find(role => role.name === "bot"); // botrole
+    const memberRole = member.guild.roles.cache.find(role => role.name === "member"); // memberrole
+    const welcomeMessage = `Hoş geldin ${member.user}! Thank you for joining our server.`;
     
-    // Mesajı göndermek istediğiniz kanalın ID'sini belirleyin
+    // Determine the ID of the channel you want to send the message to
     const channelId = '1166723958259855524';
-    // Kanalı bulun
+    // Find the channel
     const channel = member.guild.channels.cache.get(channelId);
   
-    // Kanalda hoş geldin mesajını gönderin
+    // Send welcome message on channel
     if (channel) {
       channel.send(welcomeMessage);
     } 
-  
+   //  Give the role to the new ( bot ) member
     if (member.user.bot && botRole) {
-        member.roles.add(botRole);
+        member.roles.add(botRole); // bot role
       }
     
 
-      // Yeni üyeye rolü ver
+      // Give the role to the new member
       else if (memberRole) 
       {
-        member.roles.add(memberRole);
+        member.roles.add(memberRole); // member role 
       }
   
     
