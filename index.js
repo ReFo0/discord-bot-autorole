@@ -16,7 +16,6 @@ client.on('guildMemberAdd', (member) => {
   
     if (server) 
     {
-
     const botRole = member.guild.roles.cache.find(role => role.name === "bot"); // botrole
     const memberRole = member.guild.roles.cache.find(role => role.name === "member"); // memberrole
     const welcomeMessage = `Hoş geldin ${member.user}! Thank you for joining our server.`;
